@@ -218,3 +218,21 @@ body {
     margin-bottom: 0px;
   }
 }
+
+.js .js-tabcontent section {
+  display: none;
+}
+
+.js-tabcontent section.active {
+  display: block;
+  transform: translateX(-30px);
+  opacity: 0;
+  animation: animeSection 0.5s forwards;
+}
+
+@keyframes animeSection {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
