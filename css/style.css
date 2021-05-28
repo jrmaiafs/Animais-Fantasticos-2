@@ -219,38 +219,58 @@ body {
   }
 }
 
-.js .js-tabcontent section {
+.js [data-tab="content"] section {
   display: none;
 }
 
-.js-tabcontent section.active {
+[data-tab="content"] section.active {
   display: block;
-  transform: translateX(-30px);
-  opacity: 0;
-  animation: animeSection 0.5s forwards;
 }
 
-@keyframes animeSection {
+[data-tab="content"] section.active.show-down {
+  animation: show-down 0.5s forwards;
+}
+
+[data-tab="content"] section.active.show-left {
+  animation: show-left 0.5s forwards;
+}
+
+@keyframes show-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
   to {
     opacity: initial;
     transform: initial;
   }
 }
 
-.js .js-accordion dd {
+@keyframes show-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
+
+.js [data-anime="accordion"] dd {
   display: none;
 }
 
-.js .js-accordion dt::after {
+.js [data-anime="accordion"] dt::after {
   content: "⬎";
   margin-left: 10px;
 }
 
-.js .js-accordion dt.active::after {
+.js [data-anime="accordion"] dt.active::after {
   content: "⬏";
 }
 
-.js .js-accordion dd.active {
+.js [data-anime="accordion"] dd.active {
   display: block;
   animation: slideDown 0.5s forwards;
 }
@@ -266,13 +286,13 @@ body {
   }
 }
 
-.js .js-scroll {
+.js [data-anime="scroll"] {
   opacity: 0;
   transform: translateX(-30px);
   transition: 0.5s;
 }
 
-.js .js-scroll.active {
+.js [data-anime="scroll"].active {
   opacity: 1;
   transform: initial;
 }
