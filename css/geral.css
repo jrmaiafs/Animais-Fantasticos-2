@@ -216,7 +216,9 @@ body {
   }
   .menu {
     margin-top: 0px;
+    padding: 1rem;
   }
+
   .copy {
     margin-bottom: 0px;
   }
