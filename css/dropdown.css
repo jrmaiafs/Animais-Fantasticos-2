@@ -21,7 +21,7 @@
 
 @media (max-width: 700px) {
   [data-dropdown] .dropdown-menu {
-    display: block;
+    display: none;
   }
 }
 
@@ -38,9 +38,9 @@
 
 .dropdown-menu::before {
   content: "";
-  position: absolute;
+  position: relative;
   display: block;
-  top: -10px;
+  top: -20px;
   width: 0;
   height: 0;
   border-bottom: 10px solid #e54;

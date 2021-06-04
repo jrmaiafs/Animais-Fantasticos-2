@@ -3,7 +3,9 @@ export default function clickOutSide(element, events, callback) {
   if (!element.hasAttribute(outside)) {
     element.setAttribute(outside, "");
     events.forEach((userEvent) => {
-      document.documentElement.addEventListener(userEvent, handleClickOutSide);
+      setTimeout(() =>
+        document.documentElement.addEventListener(userEvent, handleClickOutSide)
+      );
     });
   }
 

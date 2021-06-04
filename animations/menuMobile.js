@@ -1,14 +1,24 @@
-export default function initMenuMobile() {}
+import clickOutSide from "./clickoutSide.js";
 
-const button = document.querySelector("[data-button]");
-const ul = document.querySelector("[data-dropdown]");
-const ulnav = document.querySelector("[data-menu='suave'] ul");
-console.log(ulnav);
-button.addEventListener("click", handleMobileMenu);
-button.addEventListener("touchstart", handleMobileMenu);
+export default function initMenuMobile() {
+  const menuButton = document.querySelector("[data-menu='button']");
+  const menuList = document.querySelector("[data-menu='list']");
+  const events = ["click", "touchstart"];
 
-function handleMobileMenu(event) {
-  event.preventDefault();
-  button.classList.toggle("active");
-  ulnav.classList.toggle("active");
+  if (menuButton) {
+    function openMenu(event) {
+      event.preventDefault();
+      menuButton.classList.add("active");
+      menuList.classList.add("active");
+
+      clickOutSide(menuList, events, () => {
+        menuButton.classList.remove("active");
+        menuList.classList.remove("active");
+      });
+    }
+
+    events.forEach((evento) => {
+      menuButton.addEventListener(evento, openMenu);
+    });
+  }
 }
