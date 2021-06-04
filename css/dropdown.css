@@ -19,6 +19,12 @@
   animation: show-up 0.3s forwards;
 }
 
+@media (max-width: 700px) {
+  [data-dropdown] .dropdown-menu {
+    display: block;
+  }
+}
+
 @keyframes show-up {
   from {
     opacity: 0;
