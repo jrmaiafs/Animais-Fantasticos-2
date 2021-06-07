@@ -178,6 +178,20 @@ body {
   background: #fb5;
 }
 
+[data-dias]::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  border: 2px solid;
+  background: #e54;
+  display: inline-block;
+}
+
+[data-dias].open::after {
+  background: greenyellow;
+}
+
 .copy {
   grid-column: 3/5;
   margin-bottom: 2rem;
