@@ -1,5 +1,5 @@
-export default function animaNumeros() {}
-
+export default function animaNumeros() {
+  
 const numeros = Array.from(document.querySelectorAll("[data-numero]"));
 
 window.addEventListener("scroll", lookSection);
@@ -26,3 +26,5 @@ function animar(numeros) {
     }, 30 * Math.random());
   });
 }
+}
+

@@ -6,8 +6,9 @@ import initModal from "./animations/modal.js";
 import initToolTip from "./animations/toolTip.js";
 import initDropDownMenu from "./animations/initDropDownMenu.js";
 import initMenuMobile from "./animations/menuMobile.js";
-import animaNumeros from "./animations/initAnimaNumeros.js";
 import initHorarios from "./animations/initHorarios.js";
+import initFetchAnimais from "./animations/fetchAnimais.js";
+import initFetchBitCoin from "./animations/initFetchBitCoin.js";
 
 initTab();
 initAnimaScroll();
@@ -17,5 +18,6 @@ initModal();
 initToolTip();
 initDropDownMenu();
 initMenuMobile();
-animaNumeros();
-initHorarios()
+initHorarios();
+initFetchAnimais();
+initFetchBitCoin();
