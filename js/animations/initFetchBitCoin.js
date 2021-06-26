@@ -1,9 +1,5 @@
 export default function initFetchBitCoin() {}
 
-const array = [];
-console.log(array.from);
-console.log(Array.from);
-
 async function fetchBCoin(url) {
   const price = document.querySelector('.btc-price');
   const response = await fetch(url);
