@@ -1,7 +1,6 @@
-console.log('oi');
+import ScrollSmooth from './animations/initScrollSmooth.js';
 import initTab from './animations/initTab.js';
 import initAnimaScroll from './animations/initAnimaScroll.js';
-import initScrollSmooth from './animations/initScrollSmooth.js';
 import initAccordion from './animations/initAccordion.js';
 import initModal from './animations/modal.js';
 import initToolTip from './animations/toolTip.js';
@@ -11,9 +10,11 @@ import initHorarios from './animations/initHorarios.js';
 import initFetchAnimais from './animations/fetchAnimais.js';
 import initFetchBitCoin from './animations/initFetchBitCoin.js';
 
+
+const scrollSmooth = new ScrollSmooth('[data-menu="suave"] a[href^="#"]')
+scrollSmooth.init()
 initTab();
 initAnimaScroll();
-initScrollSmooth();
 initAccordion();
 initModal();
 initToolTip();
