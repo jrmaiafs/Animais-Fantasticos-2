@@ -1,0 +1,28 @@
+{
+  "name": "animais-fantasticos-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrmaiafs/Animais-Fantasticos-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrmaiafs/Animais-Fantasticos-2/issues"
+  },
+  "homepage": "https://github.com/jrmaiafs/Animais-Fantasticos-2#readme",
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.3.1"
+  }
+}
