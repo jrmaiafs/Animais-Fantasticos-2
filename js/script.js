@@ -2,7 +2,7 @@ import ScrollSmooth from './animations/initScrollSmooth.js';
 import Accordion from './animations/initAccordion.js';
 import Tabnav from './animations/initTab.js';
 import initAnimaScroll from './animations/initAnimaScroll.js';
-import initModal from './animations/modal.js';
+import Modal from './animations/modal.js';
 import initToolTip from './animations/toolTip.js';
 import initDropDownMenu from './animations/initDropDownMenu.js';
 import initMenuMobile from './animations/menuMobile.js';
@@ -22,8 +22,14 @@ const tabnav = new Tabnav(
 );
 tabnav.init();
 
+const modal = new Modal(
+  '[data-anima="abrir"]',
+  '[data-modal="fechar"]',
+  '[data-modal="container"]'
+);
+modal.init();
+
 initAnimaScroll();
-initModal();
 initToolTip();
 initDropDownMenu();
 initMenuMobile();
