@@ -3,7 +3,7 @@ import Accordion from './animations/initAccordion.js';
 import Tabnav from './animations/initTab.js';
 import initAnimaScroll from './animations/initAnimaScroll.js';
 import Modal from './animations/modal.js';
-import initToolTip from './animations/toolTip.js';
+import Tooltip from './animations/toolTip.js';
 import initDropDownMenu from './animations/initDropDownMenu.js';
 import initMenuMobile from './animations/menuMobile.js';
 import initHorarios from './animations/initHorarios.js';
@@ -29,8 +29,10 @@ const modal = new Modal(
 );
 modal.init();
 
+const tooltip = new Tooltip('[data-tooltip]');
+tooltip.init();
+
 initAnimaScroll();
-initToolTip();
 initDropDownMenu();
 initMenuMobile();
 initHorarios();
