@@ -1,28 +1,45 @@
-export default function animaNumeros() {
-  const numeros = Array.from(document.querySelectorAll('[data-numero]'));
+export default class AnimaNumeros {
+  constructor(numeros, observerTarget, observerClass) {
+    this.numeros = document.querySelectorAll(numeros);
+    this.observerTarget = document.querySelector(observerTarget);
+    this.observerClass = observerClass;
 
-  window.addEventListener('scroll', lookSection);
+    this.handleMutation = this.handleMutation.bind(this);
+  }
 
-  function lookSection() {
-    const section = document.querySelector('.numeros');
-    const active = section.classList.contains('active');
-    if (active) {
-      window.removeEventListener('scroll', lookSection);
-      animar(numeros);
+  static incrementarNumero(numero) {
+    const total = +numero.innerText;
+    let start = 0;
+    const timer = setInterval(() => {
+      start++;
+      numero.innerText = Math.round(start * (total / 100));
+      if (+numero.innerText >= total) {
+        clearInterval(timer);
+      }
+    }, 30 * Math.random());
+  }
+
+  animarNumeros() {
+    this.numeros.forEach((numero) =>
+      this.constructor.incrementarNumero(numero)
+    );
+  }
+
+  handleMutation(mutation) {
+    if (mutation[0].target.classList.contains('active')) {
+      this.observer.disconnect();
+      this.animarNumeros();
     }
   }
 
-  function animar(numeros) {
-    numeros.forEach((numero) => {
-      const total = +numero.innerText;
-      let start = 0;
-      const timer = setInterval(() => {
-        start++;
-        numero.innerText = Math.round(start * (total / 100));
-        if (+numero.innerText >= total) {
-          clearInterval(timer);
-        }
-      }, 30 * Math.random());
-    });
+  addMutationObserver() {
+    this.observer = new MutationObserver(this.handleMutation);
+    this.observer.observe(this.observerTarget, { attributes: true });
+  }
+
+  init() {
+    if (this.numeros.length && this.observerTarget) {
+      this.addMutationObserver();
+    }
   }
 }

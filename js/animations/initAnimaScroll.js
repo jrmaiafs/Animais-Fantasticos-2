@@ -9,6 +9,8 @@ export default function initAnimaScroll() {
       const isSectionVisible = sectionTop - windowHeight < 0;
       if (isSectionVisible) {
         section.classList.add('active');
+      } else if (section.classList.contains('active')) {
+        section.classList.remove('active');
       }
     });
   }

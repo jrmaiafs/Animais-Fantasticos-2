@@ -1,4 +1,4 @@
-import animaNumeros from './initAnimaNumeros.js';
+import AnimaNumeros from './initAnimaNumeros.js';
 export default function initfetchAnimais() {
   async function fetchAnimais(url) {
     const response = await fetch(url);
@@ -9,7 +9,8 @@ export default function initfetchAnimais() {
       const animal = createAnimal(animais);
       divAnimais.appendChild(animal);
     });
-    animaNumeros();
+    const animaNumeros = new AnimaNumeros('[data-numero]', '.numeros', 'active');
+    animaNumeros.init()
   }
 
   function createAnimal(animais) {
