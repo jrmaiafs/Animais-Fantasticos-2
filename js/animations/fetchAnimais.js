@@ -1,7 +1,6 @@
 import AnimaNumeros from './initAnimaNumeros.js';
 
 export default function fetchAnimals(url, target) {
-  console.log(url)
   // create the element divs
   function createElementAnimal(animais) {
     const div = document.createElement('div');
@@ -27,7 +26,6 @@ export default function fetchAnimals(url, target) {
   async function createAnimal() {
     const response = await fetch(url);
     const json = await response.json();
-    console.log(json)
 
     json.forEach((animais) => fillAnimal(animais));
     animateNumbers()
