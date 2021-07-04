@@ -7,7 +7,7 @@ import Tooltip from './animations/toolTip.js';
 import initDropDownMenu from './animations/initDropDownMenu.js';
 import initMenuMobile from './animations/menuMobile.js';
 import initHorarios from './animations/initHorarios.js';
-import initFetchAnimais from './animations/fetchAnimais.js';
+import fetchAnimals from './animations/fetchAnimais.js';
 import initFetchBitCoin from './animations/initFetchBitCoin.js';
 
 const scrollSmooth = new ScrollSmooth('[data-menu="suave"] a[href^="#"]');
@@ -36,5 +36,5 @@ initAnimaScroll();
 initDropDownMenu();
 initMenuMobile();
 initHorarios();
-initFetchAnimais();
+fetchAnimals('../../animais.json', '.numeros-grid');
 initFetchBitCoin();
