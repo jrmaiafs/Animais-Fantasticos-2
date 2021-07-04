@@ -1,12 +1,14 @@
-export default function initFetchBitCoin() {}
-
-async function fetchBCoin(url) {
-  const price = document.querySelector('.btc-price');
-  const response = await fetch(url);
-  const json = await response.json();
-
-  const brlBC = 100 / json.BRL.buy;
-  price.innerText = brlBC.toFixed(5);
+export default function fetchBitCoin(url, target) {
+  async function fetchBCoin() {
+    const response = await fetch(url);
+    const json = await response.json();
+    
+    const price = document.querySelector(target);
+    const brlBC = 100 / json.BRL.buy;
+    price.innerText = brlBC.toFixed(5);
+  }
+  
+  fetchBCoin();
 }
 
-fetchBCoin('https://blockchain.info/ticker');
+
