@@ -9,6 +9,7 @@ import MenuMobile from './animations/menuMobile.js';
 import Funcionamento from './animations/initHorarios.js';
 import fetchAnimals from './animations/fetchAnimais.js';
 import fetchBitCoin from './animations/initFetchBitCoin.js';
+import SlideNav from './animations/slide.js';
 
 const scrollSmooth = new ScrollSmooth('[data-menu="suave"] a[href^="#"]');
 scrollSmooth.init();
@@ -46,3 +47,7 @@ funcionamento.init();
 
 fetchAnimals('../../animais.json', '.numeros-grid');
 fetchBitCoin('https://blockchain.info/ticker', '.btc-price');
+
+const slide = new SlideNav('.slide', '.slide-wrapper');
+slide.init()
+slide.addControl('.custom-control')
