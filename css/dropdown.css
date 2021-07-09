@@ -37,7 +37,7 @@
 }
 
 .dropdown-menu::before {
-  content: "";
+  content: '';
   position: relative;
   display: block;
   top: -20px;
@@ -52,3 +52,9 @@
   color: #fff;
 }
 
+@media (max-width: 700px) {
+  [data-dropdown] .dropdown-menu {
+    display: block;
+    animation: show-up 0.3s forwards;
+  }
+}

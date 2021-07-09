@@ -281,12 +281,19 @@ body {
 }
 
 .js [data-anime="accordion"] dt::after {
-  content: "⬎";
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: url('..//img/arrow-red.svg') no-repeat center center;
+  transform: rotate(90deg);
+  transition: transform .3s;
   margin-left: 10px;
 }
 
 .js [data-anime="accordion"] dt.active::after {
-  content: "⬏";
+  content: "";
+  transform: rotate(-90deg);
 }
 
 .js [data-anime="accordion"] dd.active {
@@ -322,4 +329,11 @@ body {
   border-radius: 4px;
   color: #222;
   font-weight: bold;
+}
+
+.arrow-black {
+  display: inline-block;
+  background: url(../img/arrow-black.svg) no-repeat center center;
+  width: 8px;
+  height: 10px;
 }
